@@ -1,4 +1,11 @@
-FROM ruby:2.0-onbuild
+FROM openshift/ruby-20-centos
 
-EXPOSE 8080
+ADD . /tmp/
+USER root
+RUN chown -R ruby:ruby /tmp/*
+
+USER ruby
+WORKDIR /tmp/
+
+EXPOSE 8081
 CMD ["ruby", "app.rb"]
