@@ -1,3 +1,3 @@
-#\ -p 8080
+\ -p 9292
 require './app'
 run Sinatra::Application
